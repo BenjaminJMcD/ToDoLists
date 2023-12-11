@@ -1,0 +1,108 @@
+
+
+body {
+    margin: 0;
+}
+
+.main {
+
+}
+
+/* HEADER */
+
+.header {
+    position:fixed;
+    height: 150px;
+    width: 100%;
+    margin-top: 0;
+    text-align: center;
+    background-color: blue;
+}
+
+.headerTitle {
+    position: relative;
+    top: 20%;
+}
+
+/* SIDEBAR LIST SELECTION */
+
+.sideBar {
+
+}
+
+.sidebarBtn {
+
+}
+
+.sidebarTitle {
+
+}
+
+.dailySelect {
+
+}
+
+.bigSelect {
+
+}
+
+.grocerySelect {
+
+}
+
+.xmasSelect {
+
+}
+
+.giftIdeasSelect {
+
+}
+
+.gymSelect {
+
+}
+
+.generalSelect {
+
+}
+
+/* CHANGE SELECT COLOR */
+
+
+
+/* LIST CONTENT */
+
+#content {
+    
+}
+
+/* FOOTER */
+
+.footer {
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    bottom: 0;
+    background-color: black
+}
+
+.gitHub {
+    color: white;
+    text-align: center;
+}
+
+.gitLogo {
+    height: 18px;
+    padding-right: 5px;
+}
+
+span {
+    color: white;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+
+
