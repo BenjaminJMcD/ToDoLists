@@ -1,5 +1,12 @@
 import './style.css';
 import GitIcon from './github-mark-white.svg';
+import Daily from './daily';
+import Big from './big';
+import Groceries from './groceries';
+import Xmas from './xmas';
+import Gifts from './gifts';
+import Gym from './gym';
+import General from './general';
 
 function App() {
 
@@ -28,6 +35,7 @@ function App() {
     dailySelect.classList.add("dailySelect");
     dailySelect.classList.add("sidebarBtn");
     sideBar.appendChild(dailySelect);
+    dailySelect.onclick = Daily;
 
     const dailyH1 = document.createElement("h1");
     dailyH1.classList.add("sidebarTitle");
@@ -38,6 +46,7 @@ function App() {
     bigSelect.classList.add("bigSelect");
     bigSelect.classList.add("sidebarBtn");
     sideBar.appendChild(bigSelect);
+    bigSelect.onclick = Big;
 
     const bigH1 = document.createElement("h1");
     bigH1.classList.add("sidebarTitle");
@@ -48,6 +57,7 @@ function App() {
     grocerySelect.classList.add("grocerySelect");
     grocerySelect.classList.add("sidebarBtn");
     sideBar.appendChild(grocerySelect);
+    grocerySelect.onclick = Groceries;
 
     const groceryH1 = document.createElement("h1");
     groceryH1.classList.add("sidebarTitle");
@@ -58,6 +68,7 @@ function App() {
     xmasSelect.classList.add("xmasSelect");
     xmasSelect.classList.add("sidebarBtn");
     sideBar.appendChild(xmasSelect);
+    xmasSelect.onclick = Xmas;
 
     const xmasH1 = document.createElement("h1");
     xmasH1.classList.add("sidebarTitle");
@@ -68,6 +79,7 @@ function App() {
     giftIdeasSelect.classList.add("giftIdeasSelect");
     giftIdeasSelect.classList.add("sidebarBtn");
     sideBar.appendChild(giftIdeasSelect);
+    giftIdeasSelect.onclick = Gifts;
 
     const giftH1 = document.createElement("h1");
     giftH1.classList.add("sidebarTitle");
@@ -78,6 +90,7 @@ function App() {
     gymSelect.classList.add("gymSelect");
     gymSelect.classList.add("sidebarBtn");
     sideBar.appendChild(gymSelect);
+    gymSelect.onclick = Gym;
 
     const gymH1 = document.createElement("h1");
     gymH1.classList.add("sidebarTitle");
@@ -88,6 +101,7 @@ function App() {
     generalSelect.classList.add("generalSelect");
     generalSelect.classList.add("sidebarBtn");
     sideBar.appendChild(generalSelect);
+    generalSelect.onclick = General;
 
     const generalH1 = document.createElement("h1");
     generalH1.classList.add("sidebarTitle");
