@@ -99,6 +99,27 @@ body {
     padding-left: 20px;
 }
 
+#newList {
+
+}
+
+.newSubfolder {
+    padding-left: 40px;
+}
+
+.newListItem {
+    padding-left: 40px;
+}
+
+.newItemDiv {
+    display: flex;
+}
+
+
+
+
+
+
 /* FOOTER */
 
 .footer {

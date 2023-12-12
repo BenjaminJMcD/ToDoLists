@@ -1,10 +1,12 @@
+import addItem from './addItem';
+
 export default function Gym() {
 
     const content = document.getElementById("content");
     content.innerHTML = "";
 
     const page = document.createElement("div");
-    page.classList.add("page");
+    page.setAttribute("id", "page");
     content.appendChild(page);
 
     // LIST TITLE //
@@ -18,7 +20,22 @@ export default function Gym() {
     listTitle.innerText = "Gym";
     titleHeader.appendChild(listTitle);
 
-    // LIST CREATION + EDITING //
+    // ADD NEW LIST HOLDER //
+
+    const startSubFolder = document.createElement("p");
+    startSubFolder.classList.add("newSubfolder");
+    startSubFolder.innerText = "Create Subfolder";
+    page.appendChild(startSubFolder);
+
+    const createNewList = document.createElement("div");
+    createNewList.setAttribute("id", "newList");
+    page.appendChild(createNewList);
+
+    const newListItem = document.createElement("p");
+    newListItem.classList.add("newListItem");
+    newListItem.innerText = "O";
+    createNewList.appendChild(newListItem);
+    newListItem.onclick = addItem;
 
     
 
