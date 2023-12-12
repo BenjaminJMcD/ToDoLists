@@ -87,8 +87,8 @@ body {
     width: 100%;
 }
 
-.page {
-
+#page {
+    overflow:auto;
 }
 
 .titleHeader {
@@ -111,8 +111,16 @@ body {
     padding-left: 40px;
 }
 
+.listItemHighPriority {
+    background-color: red;
+}
+
 .newItemDiv {
     display: flex;
+}
+
+.renderName {
+    padding-left: 60px;
 }
 
 

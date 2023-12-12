@@ -1,3 +1,5 @@
+import renderItems from './renderItems';
+
 export default function AddItem() {
 
     const page = document.getElementById("page");
@@ -12,13 +14,18 @@ export default function AddItem() {
     newItemName.setAttribute("id", "name");
     newItemDiv.appendChild(newItemName);
 
-    const priorityCheck = document.createElement("button");
-    priorityCheck.innerText = "High Priority";
+    const highPriority = document.createElement("p");
+    highPriority.innerText = "High Priority";
+    newItemDiv.appendChild(highPriority);
+
+    const priorityCheck = document.createElement("input");
+    priorityCheck.setAttribute("type", "checkbox");
     newItemDiv.appendChild(priorityCheck);
     // onclick to turn item red and add to front of assay
 
     const submitDaily = document.createElement("button");
     submitDaily.innerText = "Submit";
     newItemDiv.appendChild(submitDaily);
-    // onclick to add to assay and render assay
+    submitDaily.onclick = renderItems;
+
 }
