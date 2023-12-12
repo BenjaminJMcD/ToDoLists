@@ -20,6 +20,9 @@ export default function AddItem() {
 
     const priorityCheck = document.createElement("input");
     priorityCheck.setAttribute("type", "checkbox");
+    priorityCheck.setAttribute("id", "priority");
+    priorityCheck.setAttribute("name", "priority");
+    priorityCheck.setAttribute("value", "high");
     newItemDiv.appendChild(priorityCheck);
     // onclick to turn item red and add to front of assay
 
