@@ -1,11 +1,16 @@
-import storageAvailable from "./storageAvailable";
+import specifyList from "./specifyList";
 
-export default function getLocalStorage() {
+export default function getLocalStorage(page) {
 
-    if (storageAvailable("localStorage")) {
-        JSON.parse(localStorage.getItem("tasks"));
+    let storageArray = [];
+
+    if (localStorage.length !== 0) {
+        for (let i=0; i<localStorage.length; i++) {
+            storageArray.push(JSON.parse(localStorage.getItem(i)));
+            console.log(storageArray[i].list);
+        }
     }
-    else {
-        console.log("No Storage")
-    }
+
+    specifyList(page, storageArray);
+
 };

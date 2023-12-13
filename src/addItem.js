@@ -26,9 +26,9 @@ export default function AddItem() {
     newItemDiv.appendChild(priorityCheck);
     // onclick to turn item red and add to front of assay
 
-    const submitDaily = document.createElement("button");
-    submitDaily.innerText = "Submit";
-    newItemDiv.appendChild(submitDaily);
-    submitDaily.onclick = inputToStorage;
+    const submitItem = document.createElement("button");
+    submitItem.innerText = "Submit";
+    newItemDiv.appendChild(submitItem);
+    submitItem.onclick = inputToStorage;
 
 }

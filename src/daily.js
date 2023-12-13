@@ -1,4 +1,6 @@
 import addItem from './addItem';
+import getLocalStorage from './getLocalStorage';
+
 
 export default function Daily() {
 
@@ -38,7 +40,13 @@ export default function Daily() {
     createNewList.appendChild(newListItem);
     newListItem.onclick = addItem;
 
+    const listDiv = document.createElement("div");
+    listDiv.setAttribute("id", "listDiv");
+    page.appendChild(listDiv);
 
+    // RENDER LIST FROM LOCAL STORAGE ON LOAD
+    const list = "daily"
+    getLocalStorage(list);
 
 
 

@@ -1,5 +1,6 @@
-import SetLocalStorage from "./setLocalStorage";
 import Item from './item';
+import SetLocalStorage from "./setLocalStorage";
+import getLocalStorage from './getLocalStorage';
 
 export default function inputToStorage() {
 
@@ -12,18 +13,9 @@ export default function inputToStorage() {
     const getPriority = document.getElementById("priority");
     let checked = getPriority.checked;
 
-    // DELETE THIS - ADD AFTER GET STORAGE
-    const renderName = document.createElement("p");
-    renderName.classList.add("renderName");
-    renderName.innerText = `- ${name}`;
-    page.appendChild(renderName);
-
     const newItem = new Item(list, name, checked);
 
     SetLocalStorage(localStorage.length, newItem);
-
-    if (checked) {
-        renderName.classList.add("listItemHighPriority");
-    }
+    getLocalStorage(list);
 
 }

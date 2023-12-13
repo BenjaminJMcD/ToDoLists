@@ -1,4 +1,5 @@
 import addItem from './addItem';
+import getLocalStorage from './getLocalStorage';
 
 export default function Big() {
 
@@ -38,6 +39,12 @@ export default function Big() {
     createNewList.appendChild(newListItem);
     newListItem.onclick = addItem;
 
+    const listDiv = document.createElement("div");
+    listDiv.setAttribute("id", "listDiv");
+    page.appendChild(listDiv);
 
+    // RENDER LIST FROM LOCAL STORAGE ON LOAD    
+    const list = "big"
+    getLocalStorage(list);
 
 }

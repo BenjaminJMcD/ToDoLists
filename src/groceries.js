@@ -1,4 +1,5 @@
 import addItem from './addItem';
+import getLocalStorage from './getLocalStorage';
 
 export default function Groceries() {
 
@@ -38,7 +39,13 @@ export default function Groceries() {
     createNewList.appendChild(newListItem);
     newListItem.onclick = addItem;
 
-    
+    const listDiv = document.createElement("div");
+    listDiv.setAttribute("id", "listDiv");
+    page.appendChild(listDiv);
+
+    // RENDER LIST FROM LOCAL STORAGE ON LOAD    
+    const list = "groceries"
+    getLocalStorage(list);
 
 
 
