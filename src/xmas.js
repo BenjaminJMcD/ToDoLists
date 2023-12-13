@@ -7,6 +7,7 @@ export default function Xmas() {
 
     const page = document.createElement("div");
     page.setAttribute("id", "page");
+    page.setAttribute("list", "xmas");
     content.appendChild(page);
 
     // LIST TITLE //

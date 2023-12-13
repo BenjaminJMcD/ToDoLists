@@ -1,4 +1,4 @@
-import renderItems from './renderItems';
+import inputToStorage from './inputToStorage';
 
 export default function AddItem() {
 
@@ -29,6 +29,6 @@ export default function AddItem() {
     const submitDaily = document.createElement("button");
     submitDaily.innerText = "Submit";
     newItemDiv.appendChild(submitDaily);
-    submitDaily.onclick = renderItems;
+    submitDaily.onclick = inputToStorage;
 
 }

@@ -7,6 +7,7 @@ export default function Groceries() {
 
     const page = document.createElement("div");
     page.setAttribute("id", "page");
+    page.setAttribute("list", "groceries");
     content.appendChild(page);
 
     // LIST TITLE //

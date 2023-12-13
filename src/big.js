@@ -7,6 +7,7 @@ export default function Big() {
 
     const page = document.createElement("div");
     page.setAttribute("id", "page");
+    page.setAttribute("list", "big");
     content.appendChild(page);
 
     // LIST TITLE //

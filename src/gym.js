@@ -7,6 +7,7 @@ export default function Gym() {
 
     const page = document.createElement("div");
     page.setAttribute("id", "page");
+    page.setAttribute("list", "gym");
     content.appendChild(page);
 
     // LIST TITLE //

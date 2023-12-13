@@ -7,6 +7,7 @@ export default function Daily() {
 
     const page = document.createElement("div");
     page.setAttribute("id", "page");
+    page.setAttribute("list", "daily");
     content.appendChild(page);
 
     // LIST TITLE //
@@ -33,7 +34,7 @@ export default function Daily() {
 
     const newListItem = document.createElement("p");
     newListItem.classList.add("newListItem");
-    newListItem.innerText = "O";
+    newListItem.innerText = "+++++";
     createNewList.appendChild(newListItem);
     newListItem.onclick = addItem;
 

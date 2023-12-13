@@ -7,6 +7,7 @@ export default function Gifts() {
 
     const page = document.createElement("div");
     page.setAttribute("id", "page");
+    page.setAttribute("list", "gifts");
     content.appendChild(page);
 
     // LIST TITLE //

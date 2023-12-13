@@ -8,7 +8,10 @@ import Gifts from './gifts';
 import Gym from './gym';
 import General from './general';
 
+
 function App() {
+
+
 
     const main = document.createElement("div");
     main.classList.add("main");

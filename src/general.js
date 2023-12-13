@@ -7,6 +7,7 @@ export default function General() {
 
     const page = document.createElement("div");
     page.setAttribute("id", "page");
+    page.setAttribute("list", "general");
     content.appendChild(page);
 
     // LIST TITLE //
