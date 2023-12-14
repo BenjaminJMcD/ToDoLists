@@ -1,5 +1,6 @@
 import addItemGifts from './addItemGifts';
 import getLocalStorage from './getLocalStorage';
+import clearSpecifiedList from './clearSpecifiedList';
 
 export default function Gifts() {
 
@@ -42,6 +43,14 @@ export default function Gifts() {
     const listDiv = document.createElement("div");
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
+
+    // CLEAR BUTTON //
+
+    const clearBtn = document.createElement("button");
+    clearBtn.innerText = "Clear All";
+    clearBtn.classList.add("clearBtn");
+    page.appendChild(clearBtn);
+    clearBtn.onclick = clearSpecifiedList;
     
     // RENDER LIST FROM LOCAL STORAGE ON LOAD
 

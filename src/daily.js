@@ -1,5 +1,6 @@
 import addItem from './addItem';
 import getLocalStorage from './getLocalStorage';
+import clearSpecifiedList from './clearSpecifiedList';
 
 
 export default function Daily() {
@@ -40,15 +41,25 @@ export default function Daily() {
     createNewList.appendChild(newListItem);
     newListItem.onclick = addItem;
 
+    // CLEAR BUTTON //
+
+    const clearBtn = document.createElement("button");
+    clearBtn.innerText = "Clear All";
+    clearBtn.classList.add("clearBtn");
+    page.appendChild(clearBtn);
+    clearBtn.onclick = clearSpecifiedList;
+
+    // DIV FOR NEW LIST
+
     const listDiv = document.createElement("div");
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
+
 
     // RENDER LIST FROM LOCAL STORAGE ON LOAD
     
     const list = "daily"
     getLocalStorage(list);
-
-
-
+    
+    
 }
