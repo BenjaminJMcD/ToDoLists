@@ -1,6 +1,6 @@
 import inputToStorage from './inputToStorage';
 
-export default function addItem() {
+export default function addItemGroceries () {
 
     const page = document.getElementById("page");
 
@@ -13,18 +13,6 @@ export default function addItem() {
     newItemName.setAttribute("placeholder", "List Item");
     newItemName.setAttribute("id", "name");
     newItemDiv.appendChild(newItemName);
-
-    const highPriority = document.createElement("p");
-    highPriority.innerText = "High Priority";
-    newItemDiv.appendChild(highPriority);
-
-    const priorityCheck = document.createElement("input");
-    priorityCheck.setAttribute("type", "checkbox");
-    priorityCheck.setAttribute("id", "priority");
-    priorityCheck.setAttribute("name", "priority");
-    priorityCheck.setAttribute("value", "high");
-    newItemDiv.appendChild(priorityCheck);
-    // onclick to turn item red and add to front of assay
 
     const submitItem = document.createElement("button");
     submitItem.innerText = "Submit";

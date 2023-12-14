@@ -1,4 +1,4 @@
-import addItem from './addItem';
+import addItemXmas from './addItemXmas';
 import getLocalStorage from './getLocalStorage';
 
 export default function Xmas() {
@@ -37,13 +37,14 @@ export default function Xmas() {
     newListItem.classList.add("newListItem");
     newListItem.innerText = "O";
     createNewList.appendChild(newListItem);
-    newListItem.onclick = addItem;
+    newListItem.onclick = addItemXmas;
 
     const listDiv = document.createElement("div");
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
     
     // RENDER LIST FROM LOCAL STORAGE ON LOAD
+    
     const list = "xmas"
     getLocalStorage(list);
 

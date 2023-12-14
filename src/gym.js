@@ -1,4 +1,4 @@
-import addItem from './addItem';
+import addItemGym from './addItemGym';
 import getLocalStorage from './getLocalStorage';
 
 export default function Gym() {
@@ -37,13 +37,14 @@ export default function Gym() {
     newListItem.classList.add("newListItem");
     newListItem.innerText = "O";
     createNewList.appendChild(newListItem);
-    newListItem.onclick = addItem;
+    newListItem.onclick = addItemGym;
 
     const listDiv = document.createElement("div");
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
 
     // RENDER LIST FROM LOCAL STORAGE ON LOAD
+    
     const list = "gym"
     getLocalStorage(list);
 

@@ -1,6 +1,6 @@
 import inputToStorage from './inputToStorage';
 
-export default function addItem() {
+export default function addItemGeneral() {
 
     const page = document.getElementById("page");
 
@@ -24,7 +24,21 @@ export default function addItem() {
     priorityCheck.setAttribute("name", "priority");
     priorityCheck.setAttribute("value", "high");
     newItemDiv.appendChild(priorityCheck);
-    // onclick to turn item red and add to front of assay
+
+    const newItemNotes = document.createElement("input");
+    newItemNotes.setAttribute("type", "text");
+    newItemNotes.setAttribute("placeholder", "Notes");
+    newItemNotes.setAttribute("id", "notes");
+    newItemDiv.appendChild(newItemNotes);
+
+    const dollarSign = document.createElement("p");
+    dollarSign.innerText = "$";
+    newItemDiv.appendChild(dollarSign);
+
+    const newItemPrice = document.createElement("input");
+    newItemPrice.setAttribute("type", "number");
+    newItemPrice.setAttribute("id", "price");
+    newItemDiv.appendChild(newItemPrice);
 
     const submitItem = document.createElement("button");
     submitItem.innerText = "Submit";

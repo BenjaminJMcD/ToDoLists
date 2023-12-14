@@ -119,6 +119,10 @@ body {
     display: flex;
 }
 
+.renderItem {
+    display: flex;
+}
+
 .renderName {
     padding-left: 60px;
 }

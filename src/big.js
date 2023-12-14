@@ -43,7 +43,8 @@ export default function Big() {
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
 
-    // RENDER LIST FROM LOCAL STORAGE ON LOAD    
+    // RENDER LIST FROM LOCAL STORAGE ON LOAD   
+     
     const list = "big"
     getLocalStorage(list);
 

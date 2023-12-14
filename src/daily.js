@@ -45,6 +45,7 @@ export default function Daily() {
     page.appendChild(listDiv);
 
     // RENDER LIST FROM LOCAL STORAGE ON LOAD
+    
     const list = "daily"
     getLocalStorage(list);
 

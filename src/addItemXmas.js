@@ -1,6 +1,6 @@
 import inputToStorage from './inputToStorage';
 
-export default function addItem() {
+export default function addItemXmas() {
 
     const page = document.getElementById("page");
 
@@ -14,17 +14,20 @@ export default function addItem() {
     newItemName.setAttribute("id", "name");
     newItemDiv.appendChild(newItemName);
 
-    const highPriority = document.createElement("p");
-    highPriority.innerText = "High Priority";
-    newItemDiv.appendChild(highPriority);
+    const newItemNotes = document.createElement("input");
+    newItemNotes.setAttribute("type", "text");
+    newItemNotes.setAttribute("placeholder", "Notes");
+    newItemNotes.setAttribute("id", "notes");
+    newItemDiv.appendChild(newItemNotes);
 
-    const priorityCheck = document.createElement("input");
-    priorityCheck.setAttribute("type", "checkbox");
-    priorityCheck.setAttribute("id", "priority");
-    priorityCheck.setAttribute("name", "priority");
-    priorityCheck.setAttribute("value", "high");
-    newItemDiv.appendChild(priorityCheck);
-    // onclick to turn item red and add to front of assay
+    const dollarSign = document.createElement("p");
+    dollarSign.innerText = "$";
+    newItemDiv.appendChild(dollarSign);
+
+    const newItemPrice = document.createElement("input");
+    newItemPrice.setAttribute("type", "number");
+    newItemPrice.setAttribute("id", "price");
+    newItemDiv.appendChild(newItemPrice);
 
     const submitItem = document.createElement("button");
     submitItem.innerText = "Submit";

@@ -1,4 +1,4 @@
-import addItem from './addItem';
+import addItemGroceries from './addItemGroceries';
 import getLocalStorage from './getLocalStorage';
 
 export default function Groceries() {
@@ -37,13 +37,14 @@ export default function Groceries() {
     newListItem.classList.add("newListItem");
     newListItem.innerText = "O";
     createNewList.appendChild(newListItem);
-    newListItem.onclick = addItem;
+    newListItem.onclick = addItemGroceries;
 
     const listDiv = document.createElement("div");
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
 
-    // RENDER LIST FROM LOCAL STORAGE ON LOAD    
+    // RENDER LIST FROM LOCAL STORAGE ON LOAD
+        
     const list = "groceries"
     getLocalStorage(list);
 

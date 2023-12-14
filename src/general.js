@@ -1,4 +1,4 @@
-import addItem from './addItem';
+import addItemGeneral from './addItemGeneral';
 import getLocalStorage from './getLocalStorage';
 
 export default function General() {
@@ -37,13 +37,14 @@ export default function General() {
     newListItem.classList.add("newListItem");
     newListItem.innerText = "O";
     createNewList.appendChild(newListItem);
-    newListItem.onclick = addItem;
+    newListItem.onclick = addItemGeneral;
 
     const listDiv = document.createElement("div");
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
 
     // RENDER LIST FROM LOCAL STORAGE ON LOAD
+    
     const list = "general"
     getLocalStorage(list);
 
