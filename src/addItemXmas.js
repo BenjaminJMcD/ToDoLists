@@ -4,6 +4,9 @@ export default function addItemXmas() {
 
     const page = document.getElementById("page");
 
+    const addBtn = document.getElementById("newListItem");
+    addBtn.classList.add("hidden");
+
     const newItemDiv = document.createElement("div");
     newItemDiv.classList.add("newItemDiv");
     page.appendChild(newItemDiv);

@@ -23,7 +23,7 @@ export default function Big() {
     listTitle.innerText = "To Do - Big";
     titleHeader.appendChild(listTitle);
 
-    // ADD NEW LIST HOLDER //
+    // SUBFOLDER BUTTON //
 
     const startSubFolder = document.createElement("p");
     startSubFolder.classList.add("newSubfolder");
@@ -34,16 +34,6 @@ export default function Big() {
     createNewList.setAttribute("id", "newList");
     page.appendChild(createNewList);
 
-    const newListItem = document.createElement("p");
-    newListItem.classList.add("newListItem");
-    newListItem.innerText = "O";
-    createNewList.appendChild(newListItem);
-    newListItem.onclick = addItem;
-
-    const listDiv = document.createElement("div");
-    listDiv.setAttribute("id", "listDiv");
-    page.appendChild(listDiv);
-
     // CLEAR BUTTON //
 
     const clearBtn = document.createElement("button");
@@ -52,9 +42,23 @@ export default function Big() {
     page.appendChild(clearBtn);
     clearBtn.onclick = clearSpecifiedList;
 
-    // RENDER LIST FROM LOCAL STORAGE ON LOAD   
+    // DIV FOR LIST //
+
+    const listDiv = document.createElement("div");
+    listDiv.setAttribute("id", "listDiv");
+    page.appendChild(listDiv);
+
+    // RENDER LIST FROM LOCAL STORAGE ON LOAD //  
      
     const list = "big"
     getLocalStorage(list);
+
+    // NEW ITEM FORM //
+
+    const newListItem = document.createElement("p");
+    newListItem.setAttribute("id", "newListItem");
+    newListItem.innerText = "Add Item";
+    createNewList.appendChild(newListItem);
+    newListItem.onclick = addItem;
 
 }

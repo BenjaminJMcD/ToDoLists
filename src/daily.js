@@ -35,12 +35,6 @@ export default function Daily() {
     createNewList.setAttribute("id", "newList");
     page.appendChild(createNewList);
 
-    const newListItem = document.createElement("p");
-    newListItem.classList.add("newListItem");
-    newListItem.innerText = "+++++";
-    createNewList.appendChild(newListItem);
-    newListItem.onclick = addItem;
-
     // CLEAR BUTTON //
 
     const clearBtn = document.createElement("button");
@@ -60,6 +54,13 @@ export default function Daily() {
     
     const list = "daily"
     getLocalStorage(list);
+
+    // NEW ITEM FORM //
     
+    const newListItem = document.createElement("p");
+    newListItem.setAttribute("id", "newListItem");
+    newListItem.innerText = "Add Item";
+    createNewList.appendChild(newListItem);
+    newListItem.onclick = addItem;
     
 }

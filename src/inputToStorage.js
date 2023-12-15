@@ -14,11 +14,13 @@ export default function inputToStorage() {
 
     newItem.list = list;
     newItem.name = name;
+    getName.value = "";
 
     const getPriority = document.getElementById("priority");
         if (getPriority) {
             const checked = getPriority.checked;
             newItem.priority = checked;
+            getPriority.checked = false;
         }
         else {
             newItem.priority = null;
@@ -28,6 +30,7 @@ export default function inputToStorage() {
         if (getNotes) {
         const notes = getNotes.value;
         newItem.notes = notes;
+        getNotes.value = "";
         }
         else {
             newItem.notes = null;
@@ -37,6 +40,7 @@ export default function inputToStorage() {
         if (getPrice) {
             const price = getPrice.value;
             newItem.price = price;
+            getPrice.value = "";
         }
         else {
             newItem.price = null;
@@ -46,6 +50,7 @@ export default function inputToStorage() {
         if (getSets) {
             const sets = getSets.value;
             newItem.sets = sets;
+            getSets.value = "";
         }
         else {
             newItem.sets = null;
@@ -55,6 +60,7 @@ export default function inputToStorage() {
         if (getReps) {
             const reps = getReps.value;
             newItem.reps = reps;
+            getReps.value = "";
         }
         else {
             newItem.reps = null;
@@ -64,6 +70,7 @@ export default function inputToStorage() {
         if (getWeight) {
             const weight = getWeight.value;
             newItem.weight = weight;
+            getWeight.value = "";
         }
         else {
             newItem.weight = null;
@@ -77,8 +84,6 @@ export default function inputToStorage() {
         else {
             newItem.subFolder = null;
         }
-
-
 
     SetLocalStorage(localStorage.length, newItem);
     getLocalStorage(list);

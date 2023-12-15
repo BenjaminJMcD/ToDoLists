@@ -22,6 +22,14 @@ export default function Xmas() {
     listTitle.classList.add("listTitle");
     listTitle.innerText = "Xmas Gifts";
     titleHeader.appendChild(listTitle);
+    
+    // CLEAR BUTTON //
+
+    const clearBtn = document.createElement("button");
+    clearBtn.innerText = "Clear All";
+    clearBtn.classList.add("clearBtn");
+    page.appendChild(clearBtn);
+    clearBtn.onclick = clearSpecifiedList;
 
     // ADD NEW LIST HOLDER //
 
@@ -34,23 +42,18 @@ export default function Xmas() {
     createNewList.setAttribute("id", "newList");
     page.appendChild(createNewList);
 
-    const newListItem = document.createElement("p");
-    newListItem.classList.add("newListItem");
-    newListItem.innerText = "O";
-    createNewList.appendChild(newListItem);
-    newListItem.onclick = addItemXmas;
-
     const listDiv = document.createElement("div");
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
+    
+    const newListItem = document.createElement("p");
+    newListItem.setAttribute("id", "newListItem");
+    newListItem.innerText = "Add Item";
+    createNewList.appendChild(newListItem);
+    newListItem.onclick = addItemXmas;
 
-    // CLEAR BUTTON //
 
-    const clearBtn = document.createElement("button");
-    clearBtn.innerText = "Clear All";
-    clearBtn.classList.add("clearBtn");
-    page.appendChild(clearBtn);
-    clearBtn.onclick = clearSpecifiedList;
+
     
     // RENDER LIST FROM LOCAL STORAGE ON LOAD
     

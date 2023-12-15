@@ -4,6 +4,9 @@ export default function addItemGeneral() {
 
     const page = document.getElementById("page");
 
+    const addBtn = document.getElementById("newListItem");
+    addBtn.classList.add("hidden");
+
     const newItemDiv = document.createElement("div");
     newItemDiv.classList.add("newItemDiv");
     page.appendChild(newItemDiv);
@@ -44,5 +47,9 @@ export default function addItemGeneral() {
     submitItem.innerText = "Submit";
     newItemDiv.appendChild(submitItem);
     submitItem.onclick = inputToStorage;
+
+    // RESET INPUT //
+
+    
 
 }

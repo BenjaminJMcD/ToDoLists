@@ -107,8 +107,12 @@ body {
     padding-left: 40px;
 }
 
-.newListItem {
+#newListItem {
     padding-left: 40px;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .listItemHighPriority {

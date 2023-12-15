@@ -34,15 +34,16 @@ export default function General() {
     createNewList.setAttribute("id", "newList");
     page.appendChild(createNewList);
 
-    const newListItem = document.createElement("p");
-    newListItem.classList.add("newListItem");
-    newListItem.innerText = "O";
-    createNewList.appendChild(newListItem);
-    newListItem.onclick = addItemGeneral;
-
     const listDiv = document.createElement("div");
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
+    
+    const newListItem = document.createElement("p");
+    newListItem.setAttribute("id", "newListItem");
+    newListItem.innerText = "Add Item";
+    createNewList.appendChild(newListItem);
+    newListItem.onclick = addItemGeneral;
+
 
     // CLEAR BUTTON //
 
