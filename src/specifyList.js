@@ -1,5 +1,4 @@
 import renderList from "./renderList";
-import resetLocalStorage from "./resetLocalStorage";
 
 export default function specifyList(page, array) {
 

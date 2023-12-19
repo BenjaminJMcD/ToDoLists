@@ -1,3 +1,5 @@
+import displayEditForm from "./displayEditForm";
+
 export default function renderList(array) {
 
     const listDiv = document.getElementById("listDiv");
@@ -52,10 +54,18 @@ export default function renderList(array) {
             renderItem.appendChild(renderWeight);
         }
 
+        const editBtn = document.createElement("button");
+        editBtn.classList.add("editBtn");
+        editBtn.innerText = "Edit";
+        renderItem.appendChild(editBtn);
+        renderItem.onclick = displayEditForm;
+
+        const removeBtn = document.createElement("button");
+        removeBtn.classList.add("removeBtn");
+        removeBtn.innerText = "Remove";
+        renderItem.appendChild(removeBtn);
+
         listDiv.appendChild(renderItem);
-
-
-
 
     }
 

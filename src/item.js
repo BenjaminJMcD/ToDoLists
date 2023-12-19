@@ -1,5 +1,5 @@
 export default class Item {
-    constructor(list, name, priority, notes, price, sets, reps, weight, subFolder) {
+    constructor(list, name, priority, notes, price, sets, reps, weight, key, subFolder) {
         this.list = list;
         this.name = name;
         this.priority = priority;
@@ -8,6 +8,8 @@ export default class Item {
         this.sets = sets;
         this.reps = reps;
         this.weight = weight;
+        this.key = key;
         this.subFolder = subFolder;
+
     }
 }

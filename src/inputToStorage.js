@@ -12,6 +12,7 @@ export default function inputToStorage() {
     const getName = document.getElementById("name");
     const name = getName.value;
 
+    newItem.key = localStorage.length;
     newItem.list = list;
     newItem.name = name;
     getName.value = "";
