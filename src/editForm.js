@@ -1,4 +1,5 @@
 import editItem from "./editItem";
+import togglePriority from "./togglePriorityEdit";
 
 export default function editForm (item, parentElement) {
 
@@ -8,7 +9,7 @@ export default function editForm (item, parentElement) {
     const list = item.list;
     const name = item.name;
 
-    const priority = item.priority;
+
     const notes = item.notes;
     const price = item.price;
     const sets = item.sets;
@@ -16,11 +17,8 @@ export default function editForm (item, parentElement) {
     const weight = item.weight;
 
     console.log(name);
-    console.log(priority);
     console.log(key);
     console.log(list);
-
-    // onchange = name = input.value
     
     const nameInput = document.createElement("input");
     nameInput.setAttribute("type", "text");
@@ -31,7 +29,7 @@ export default function editForm (item, parentElement) {
     parentElement.appendChild(nameInput);
 
 
-    if (item.priority) {
+    if (item.priority != null) {
 
         const priorityP = document.createElement("p");
         priorityP.classList.add("editPriority");
@@ -40,13 +38,29 @@ export default function editForm (item, parentElement) {
 
         const highlightBtn = document.createElement("input");
         highlightBtn.setAttribute("type", "checkbox");
-        highlightBtn.setAttribute("id", "priority");
+        highlightBtn.setAttribute("id", "priorityEdit");
         highlightBtn.setAttribute("name", "priority");
         highlightBtn.setAttribute("value", "high");
+        if (item.priority) {
+            highlightBtn.checked = true;
+        }
+        highlightBtn.onclick = togglePriority;
         parentElement.appendChild(highlightBtn);
     }
-    
-    
+
+    parentElement.onchange = function () {
+        if (parentElement.classList.contains("listItemHighPriority")) {
+            item.priority = true;
+        }
+        else {
+            item.priority = false;
+        }
+    }
+
+
+
+
+
     let submitEdit = document.createElement("button"); 
     submitEdit.innerText = "Edit";
     submitEdit.addEventListener("click", function () {return editItem(key, item, list)})
