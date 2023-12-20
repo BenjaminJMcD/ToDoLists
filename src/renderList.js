@@ -58,7 +58,7 @@ export default function renderList(array) {
         editBtn.classList.add("editBtn");
         editBtn.innerText = "Edit";
         renderItem.appendChild(editBtn);
-        renderItem.onclick = displayEditForm;
+        editBtn.onclick = displayEditForm;
 
         const removeBtn = document.createElement("button");
         removeBtn.classList.add("removeBtn");
