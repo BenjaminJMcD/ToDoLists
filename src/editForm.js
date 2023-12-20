@@ -7,22 +7,15 @@ export default function editForm (item, parentElement) {
 
     const key = item.key;
     const list = item.list;
-    const name = item.name;
 
-
-    const notes = item.notes;
-    const price = item.price;
-    const sets = item.sets;
-    const reps = item.reps;
     const weight = item.weight;
 
-    console.log(name);
     console.log(key);
     console.log(list);
     
     const nameInput = document.createElement("input");
     nameInput.setAttribute("type", "text");
-    nameInput.value = name;
+    nameInput.value = item.name;
     nameInput.onchange = (event) => {
         item.name = event.target.value;
     };
@@ -57,9 +50,55 @@ export default function editForm (item, parentElement) {
         }
     }
 
+    if (item.notes != null) {
+        const notesInput = document.createElement("input");
+        notesInput.setAttribute("type", "text");
+        notesInput.value = item.notes;
+        notesInput.onchange = (event) => {
+            item.notes = event.target.value;
+        };
+        parentElement.appendChild(notesInput);
+    }
 
+    if (item.price != null) {
+        const priceInput = document.createElement("input");
+        priceInput.setAttribute("type", "number");
+        priceInput.value = item.price;
+        priceInput.onchange = (event) => {
+            item.price = event.target.value;
+        }
+        parentElement.appendChild(priceInput);
+    }
 
+    if (item.sets != null) {
+        const setsInput = document.createElement("input");
+        setsInput.setAttribute("type", "number");
+        setsInput.value = item.sets;
+        setsInput.onchange = (event) => {
+            item.sets = event.target.value;
+        };
+        parentElement.appendChild(setsInput);
+    }
 
+    if (item.reps != null) {
+        const repsInput = document.createElement("input");
+        repsInput.setAttribute("type", "number");
+        repsInput.value = item.sets;
+        repsInput.onchange = (event) => {
+            item.reps = event.target.value;
+        };
+        parentElement.appendChild(repsInput);
+    }
+
+    if (item.weight != null) {
+        const weightInput = document.createElement("input");
+        weightInput.setAttribute("type", "number");
+        weightInput.value = item.weight;
+        weightInput.onchange = (event) => {
+            item.weight = event.target.value;
+        };
+        parentElement.appendChild(weightInput);
+    }
 
     let submitEdit = document.createElement("button"); 
     submitEdit.innerText = "Edit";
