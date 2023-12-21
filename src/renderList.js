@@ -1,4 +1,5 @@
 import displayEditForm from "./displayEditForm";
+import remove from './remove';
 
 export default function renderList(array) {
 
@@ -64,6 +65,7 @@ export default function renderList(array) {
         removeBtn.classList.add("removeBtn");
         removeBtn.innerText = "Remove";
         renderItem.appendChild(removeBtn);
+        removeBtn.onclick = remove;
 
         listDiv.appendChild(renderItem);
 

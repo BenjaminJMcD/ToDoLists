@@ -7,11 +7,6 @@ export default function editForm (item, parentElement) {
 
     const key = item.key;
     const list = item.list;
-
-    const weight = item.weight;
-
-    console.log(key);
-    console.log(list);
     
     const nameInput = document.createElement("input");
     nameInput.setAttribute("type", "text");
