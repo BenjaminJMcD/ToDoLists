@@ -1,5 +1,6 @@
 import displayEditForm from "./displayEditForm";
 import remove from './remove';
+import addSubItem from "./addSubItem";
 
 export default function renderList(array) {
 
@@ -55,6 +56,15 @@ export default function renderList(array) {
             renderItem.appendChild(renderWeight);
         }
 
+        if (array[i].list === "daily" || array[i].list == "big" || array[i].list == "general") {
+            const subfolderBtn = document.createElement("p");
+            subfolderBtn.innerText = "+SubList";
+            subfolderBtn.classList.add("subfolderBtn");
+            renderItem.appendChild(subfolderBtn);
+            subfolderBtn.addEventListener("click", function () {
+                return addSubItem(array[i].name.replace(/ /g, ""))})
+        }
+
         const editBtn = document.createElement("button");
         editBtn.classList.add("editBtn");
         editBtn.innerText = "Edit";
@@ -67,7 +77,17 @@ export default function renderList(array) {
         renderItem.appendChild(removeBtn);
         removeBtn.onclick = remove;
 
-        listDiv.appendChild(renderItem);
+        const subfolderDiv = document.createElement("div");
+        subfolderDiv.setAttribute("id", array[i].name.replace(/ /g, ""));
+        renderItem.appendChild(subfolderDiv);
+
+        if (array[i].subFolder) {
+            const subDiv = document.getElementById(array[i].subFolder);
+            subDiv.appendChild(renderItem);
+        }
+        else {
+            listDiv.appendChild(renderItem);
+        }
 
     }
 

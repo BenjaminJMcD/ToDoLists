@@ -35,7 +35,7 @@ export default function Xmas() {
 
     const startSubFolder = document.createElement("p");
     startSubFolder.classList.add("newSubfolder");
-    startSubFolder.innerText = "Create Subfolder";
+    startSubFolder.innerText = "Add Recipient";
     page.appendChild(startSubFolder);
 
     const createNewList = document.createElement("div");
@@ -48,7 +48,7 @@ export default function Xmas() {
     
     const newListItem = document.createElement("p");
     newListItem.setAttribute("id", "newListItem");
-    newListItem.innerText = "Add Item";
+    newListItem.innerText = "General Item";
     createNewList.appendChild(newListItem);
     newListItem.onclick = addItemXmas;
 

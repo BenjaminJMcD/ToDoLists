@@ -2,7 +2,7 @@ import Item from './item';
 import SetLocalStorage from "./setLocalStorage";
 import getLocalStorage from './getLocalStorage';
 
-export default function inputToStorage() {
+export default function inputToStorage(subFolder) {
 
     const newItem = new Item();
 
@@ -77,14 +77,21 @@ export default function inputToStorage() {
             newItem.weight = null;
         }
 
-    const getSubFolder = document.getElementById("subFolder");
-        if (getSubFolder) {
-            const subFolder = getSubFolder.value;
-            newItem.subFolder = subFolder;
-        }
-        else {
-            newItem.subFolder = null;
-        }
+    if (subFolder) {
+        newItem.subFolder = subFolder;
+    }
+    else {
+        newItem.subFolder = null;
+    }
+
+    // const getSubFolder = document.getElementById("subFolder");
+    //     if (getSubFolder) {
+    //         const subFolder = getSubFolder.value;
+    //         newItem.subFolder = subFolder;
+    //     }
+    //     else {
+    //         newItem.subFolder = null;
+    //     }
 
     SetLocalStorage(localStorage.length, newItem);
     getLocalStorage(list);
