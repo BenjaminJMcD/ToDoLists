@@ -86,16 +86,16 @@ export default function renderList(array) {
         renderItem.appendChild(removeBtn);
         removeBtn.onclick = remove;
 
-        const subfolderDiv = document.createElement("div");
-        subfolderDiv.setAttribute("id", array[i].name.replace(/ /g, ""));
-        renderItem.appendChild(subfolderDiv);
-
         if (array[i].subFolder != null) {
             const subDiv = document.getElementById(array[i].subFolder);
             subDiv.appendChild(renderItem);
         }
         else {
             listDiv.appendChild(renderItem);
+            const subfolderDiv = document.createElement("div");
+            subfolderDiv.setAttribute("id", array[i].name.replace(/ /g, ""));
+            subfolderDiv.classList.add("subList")
+            listDiv.appendChild(subfolderDiv);
         }
 
     }
