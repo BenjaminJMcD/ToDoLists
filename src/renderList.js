@@ -1,6 +1,7 @@
 import displayEditForm from "./displayEditForm";
 import remove from './remove';
 import addSubItem from "./addSubItem";
+import addSubGeneral from './addSubGeneral';
 
 export default function renderList(array) {
 
@@ -56,13 +57,21 @@ export default function renderList(array) {
             renderItem.appendChild(renderWeight);
         }
 
-        if (array[i].list === "daily" || array[i].list == "big" || array[i].list == "general") {
+        if (array[i].list === "daily"  && array[i].subFolder === null|| array[i].list == "big" && array[i].subFolder === null) {
             const subfolderBtn = document.createElement("p");
             subfolderBtn.innerText = "+SubList";
             subfolderBtn.classList.add("subfolderBtn");
             renderItem.appendChild(subfolderBtn);
             subfolderBtn.addEventListener("click", function () {
                 return addSubItem(array[i].name.replace(/ /g, ""))})
+        }
+        else if (array[i].list == "general" && array[i].subFolder === null) {
+            const subfolderBtn = document.createElement("p");
+            subfolderBtn.innerText = "+SubList";
+            subfolderBtn.classList.add("subfolderBtn");
+            renderItem.appendChild(subfolderBtn);
+            subfolderBtn.addEventListener("click", function () {
+                return addSubGeneral(array[i].name.replace(/ /g, ""))}) 
         }
 
         const editBtn = document.createElement("button");
@@ -81,7 +90,7 @@ export default function renderList(array) {
         subfolderDiv.setAttribute("id", array[i].name.replace(/ /g, ""));
         renderItem.appendChild(subfolderDiv);
 
-        if (array[i].subFolder) {
+        if (array[i].subFolder != null) {
             const subDiv = document.getElementById(array[i].subFolder);
             subDiv.appendChild(renderItem);
         }

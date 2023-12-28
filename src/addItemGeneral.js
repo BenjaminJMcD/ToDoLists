@@ -46,9 +46,9 @@ export default function addItemGeneral() {
     const submitItem = document.createElement("button");
     submitItem.innerText = "Submit";
     newItemDiv.appendChild(submitItem);
-    submitItem.onclick = inputToStorage;
-
-    // RESET INPUT //
+    submitItem.addEventListener("click", function () {
+        return inputToStorage(null);
+    })
 
     
 

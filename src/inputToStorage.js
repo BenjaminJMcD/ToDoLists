@@ -17,6 +17,8 @@ export default function inputToStorage(subFolder) {
     newItem.name = name;
     getName.value = "";
 
+    newItem.subFolder = subFolder;
+
     const getPriority = document.getElementById("priority");
         if (getPriority) {
             const checked = getPriority.checked;
@@ -76,13 +78,6 @@ export default function inputToStorage(subFolder) {
         else {
             newItem.weight = null;
         }
-
-    if (subFolder) {
-        newItem.subFolder = subFolder;
-    }
-    else {
-        newItem.subFolder = null;
-    }
 
     // const getSubFolder = document.getElementById("subFolder");
     //     if (getSubFolder) {
