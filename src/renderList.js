@@ -2,6 +2,7 @@ import displayEditForm from "./displayEditForm";
 import remove from './remove';
 import addSubItem from "./addSubItem";
 import addSubGeneral from './addSubGeneral';
+import removeSubItems from "./removeSubItems";
 
 export default function renderList(array) {
 
@@ -87,14 +88,20 @@ export default function renderList(array) {
         removeBtn.onclick = remove;
 
         if (array[i].subFolder != null) {
-            const subDiv = document.getElementById(array[i].subFolder);
-            subDiv.appendChild(renderItem);
+            if (document.getElementById(array[i].subFolder)){  
+                const subDiv = document.getElementById(array[i].subFolder);
+                subDiv.appendChild(renderItem); 
+            }
+            else {  
+                removeSubItems(array[i]);   
+                break;
+            }
         }
-        else {
+        else { 
             listDiv.appendChild(renderItem);
             const subfolderDiv = document.createElement("div");
             subfolderDiv.setAttribute("id", array[i].name.replace(/ /g, ""));
-            subfolderDiv.classList.add("subList")
+            subfolderDiv.classList.add("subList");
             listDiv.appendChild(subfolderDiv);
         }
 

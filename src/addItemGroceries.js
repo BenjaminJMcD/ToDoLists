@@ -20,6 +20,8 @@ export default function addItemGroceries () {
     const submitItem = document.createElement("button");
     submitItem.innerText = "Submit";
     newItemDiv.appendChild(submitItem);
-    submitItem.onclick = inputToStorage;
+    submitItem.addEventListener("click", function () {
+        return inputToStorage(null);
+    })
 
 }

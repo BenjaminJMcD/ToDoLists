@@ -103,6 +103,10 @@ body {
 
 }
 
+#listDiv {
+    padding-left: 80px;
+}
+
 .newSubfolder {
     padding-left: 40px;
 }
@@ -128,7 +132,7 @@ body {
 }
 
 .renderName {
-    padding-left: 60px;
+
 }
 
 .editBtn {
