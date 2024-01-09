@@ -27,7 +27,6 @@ export default function addItem() {
     priorityCheck.setAttribute("name", "priority");
     priorityCheck.setAttribute("value", "high");
     newItemDiv.appendChild(priorityCheck);
-    // onclick to turn item red and add to front of assay
 
     const submitItem = document.createElement("button");
     submitItem.innerText = "Submit";

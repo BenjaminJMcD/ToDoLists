@@ -1,7 +1,6 @@
 import addItem from './addItem';
 import getLocalStorage from './getLocalStorage';
 import clearSpecifiedList from './clearSpecifiedList';
-import addSubfolder from './addSubfolder';
 
 
 export default function Daily() {
@@ -26,12 +25,6 @@ export default function Daily() {
     titleHeader.appendChild(listTitle);
 
     // ADD NEW LIST HOLDER //
-
-    const startSubFolder = document.createElement("p");
-    startSubFolder.classList.add("newSubfolder");
-    startSubFolder.innerText = "Create Subfolder";
-    startSubFolder.onclick = addSubfolder;
-    page.appendChild(startSubFolder);
 
     const createNewList = document.createElement("div");
     createNewList.setAttribute("id", "newList");
