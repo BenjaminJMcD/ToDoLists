@@ -20,6 +20,7 @@ body {
     top: 0;
     text-align: center;
     background-color: rgb(39, 39, 85);
+    z-index: 2;
 }
 
 .headerTitle {
@@ -33,6 +34,7 @@ body {
     position: fixed;
     top: 150px;
     bottom: 40px;
+    z-index: 2;
 }
 
 .sidebarBtn {
@@ -80,14 +82,16 @@ body {
 /* LIST CONTENT */
 
 #content {
-    position: fixed;
-    overflow: auto;
+    position: relative;
     left: 255px;
+    right: 10px;
     top: 150px;
-    width: 100%;
+    bottom: 40px;
+    width: 80%;
 }
 
 #page {
+    position: absolute;
     overflow:auto;
 }
 
@@ -104,7 +108,10 @@ body {
 }
 
 #listDiv {
+    position: relative;
     padding-left: 80px;
+    bottom: 40px;
+
 }
 
 .newSubfolder {
