@@ -1,9 +1,12 @@
 import editItem from "./editItem";
 import togglePriority from "./togglePriorityEdit";
+import resetSubFolders from "./resetSubFolders";
 
 export default function editForm (item, parentElement) {
 
     parentElement.innerHTML = "";
+
+    const subDiv = document.getElementById(item.name.replace(/ /g, ""));
 
     const key = item.key;
     const list = item.list;
@@ -12,8 +15,16 @@ export default function editForm (item, parentElement) {
     nameInput.setAttribute("type", "text");
     nameInput.value = item.name;
     nameInput.onchange = (event) => {
-        item.name = event.target.value;
+        if (item.subFolder == null) {
+            resetSubFolders(item.name, event.target.value.replace(/ /g, ""));
+            item.name = event.target.value;
+            subDiv.setAttribute("id", event.target.value.replace(/ /g, ""));
+        }
+        else if (item.subFolder != null) {
+            item.name = event.target.value;
+        }
     };
+    
     parentElement.appendChild(nameInput);
 
 
@@ -97,7 +108,9 @@ export default function editForm (item, parentElement) {
 
     let submitEdit = document.createElement("button"); 
     submitEdit.innerText = "Edit";
-    submitEdit.addEventListener("click", function () {return editItem(key, item, list)})
+    submitEdit.addEventListener("click", function () {
+        return editItem(key, item, list)
+    })
     parentElement.appendChild(submitEdit);
 
 }
