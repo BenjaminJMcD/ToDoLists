@@ -5,6 +5,7 @@ import addSubGeneral from './addSubGeneral';
 import addSubGroceries from "./addSubGroceries";
 import addSubXmas from "./addSubXmas";
 import removeSubItems from "./removeSubItems";
+import subFolderTotal from "./subFolderTotal";
 
 
 export default function renderList(array) {
@@ -75,7 +76,12 @@ export default function renderList(array) {
             subfolderBtn.classList.add("subfolderBtn");
             renderItem.appendChild(subfolderBtn);
             subfolderBtn.addEventListener("click", function () {
-                return addSubGeneral(array[i].name.replace(/ /g, ""))}) 
+                return addSubGeneral(array[i].name.replace(/ /g, ""))
+            })
+            const subTotal = document.createElement("p");
+            const totalValue = subFolderTotal(array[i].name.replace(/ /g, ""));
+            subTotal.innerText = `Total $${totalValue}`
+            renderItem.appendChild(subTotal); 
         }
         else if (array[i].list == "groceries" && array[i].subFolder === null) {
             const subfolderBtn = document.createElement("p");
@@ -91,7 +97,13 @@ export default function renderList(array) {
             subfolderBtn.classList.add("subfolderBtn");
             renderItem.appendChild(subfolderBtn);
             subfolderBtn.addEventListener("click", function () {
-                return addSubXmas(array[i].name.replace(/ /g, ""))}) 
+                return addSubXmas(array[i].name.replace(/ /g, ""))
+            }) 
+            const subTotal = document.createElement("p");
+            const totalValue = subFolderTotal(array[i].name.replace(/ /g, ""));
+            subTotal.innerText = `Total $${totalValue}`
+            renderItem.appendChild(subTotal);
+            
         }
         
         const editBtn = document.createElement("button");
