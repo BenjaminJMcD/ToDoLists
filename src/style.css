@@ -99,8 +99,12 @@ body {
 
 }
 
-.listTitle {
+.listName {
     padding-left: 20px;
+}
+
+#listTitle {
+    padding-left: 40px;
 }
 
 #newList {
@@ -112,10 +116,6 @@ body {
     padding-left: 80px;
     bottom: 40px;
 
-}
-
-.newSubfolder {
-    padding-left: 40px;
 }
 
 #newListItem {

@@ -23,12 +23,7 @@ export default function Big() {
     listTitle.innerText = "To Do - Big";
     titleHeader.appendChild(listTitle);
 
-    // SUBFOLDER BUTTON //
-
-    const startSubFolder = document.createElement("p");
-    startSubFolder.classList.add("newSubfolder");
-    startSubFolder.innerText = "Create Subfolder";
-    page.appendChild(startSubFolder);
+    // DIV FOR NEW LIST //
 
     const createNewList = document.createElement("div");
     createNewList.setAttribute("id", "newList");

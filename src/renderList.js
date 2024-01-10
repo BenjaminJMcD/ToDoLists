@@ -2,7 +2,10 @@ import displayEditForm from "./displayEditForm";
 import remove from './remove';
 import addSubItem from "./addSubItem";
 import addSubGeneral from './addSubGeneral';
+import addSubGroceries from "./addSubGroceries";
+import addSubXmas from "./addSubXmas";
 import removeSubItems from "./removeSubItems";
+
 
 export default function renderList(array) {
 
@@ -74,7 +77,23 @@ export default function renderList(array) {
             subfolderBtn.addEventListener("click", function () {
                 return addSubGeneral(array[i].name.replace(/ /g, ""))}) 
         }
-
+        else if (array[i].list == "groceries" && array[i].subFolder === null) {
+            const subfolderBtn = document.createElement("p");
+            subfolderBtn.innerText = "+SubList";
+            subfolderBtn.classList.add("subfolderBtn");
+            renderItem.appendChild(subfolderBtn);
+            subfolderBtn.addEventListener("click", function () {
+                return addSubGroceries(array[i].name.replace(/ /g, ""))}) 
+        }
+        else if (array[i].list == "xmas" && array[i].subFolder === null) {
+            const subfolderBtn = document.createElement("p");
+            subfolderBtn.innerText = "+SubList";
+            subfolderBtn.classList.add("subfolderBtn");
+            renderItem.appendChild(subfolderBtn);
+            subfolderBtn.addEventListener("click", function () {
+                return addSubXmas(array[i].name.replace(/ /g, ""))}) 
+        }
+        
         const editBtn = document.createElement("button");
         editBtn.classList.add("editBtn");
         editBtn.innerText = "Edit";

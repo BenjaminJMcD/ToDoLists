@@ -1,6 +1,7 @@
 import addItemGeneral from './addItemGeneral';
 import getLocalStorage from './getLocalStorage';
 import clearSpecifiedList from './clearSpecifiedList';
+import listTitle from './listTitle';
 
 export default function General() {
 
@@ -12,16 +13,24 @@ export default function General() {
     page.setAttribute("list", "general");
     content.appendChild(page);
 
-    // LIST TITLE //
+    // LIST NAME HEADER //
 
     const titleHeader = document.createElement("div");
     titleHeader.classList.add("titleHeader");
     page.appendChild(titleHeader);
 
-    const listTitle = document.createElement("h1");
-    listTitle.classList.add("listTitle");
-    listTitle.innerText = "General";
-    titleHeader.appendChild(listTitle);
+    const listName = document.createElement("h1");
+    listName.classList.add("listName");
+    listName.innerText = "General";
+    titleHeader.appendChild(listName);
+
+    // LIST TITLE BUTTON //
+
+    const startSubFolder = document.createElement("p");
+    startSubFolder.setAttribute("id", "listTitle");
+    startSubFolder.innerText = "Add List Title";
+    startSubFolder.onclick = listTitle;
+    page.appendChild(startSubFolder);
 
     // ADD NEW LIST HOLDER //
 

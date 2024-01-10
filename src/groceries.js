@@ -1,6 +1,7 @@
 import addItemGroceries from './addItemGroceries';
 import getLocalStorage from './getLocalStorage';
 import clearSpecifiedList from './clearSpecifiedList';
+import listTitle from './listTitle';
 
 export default function Groceries() {
 
@@ -12,23 +13,26 @@ export default function Groceries() {
     page.setAttribute("list", "groceries");
     content.appendChild(page);
 
-    // LIST TITLE //
+    // LIST NAME HEADER //
 
     const titleHeader = document.createElement("div");
     titleHeader.classList.add("titleHeader");
     page.appendChild(titleHeader);
 
-    const listTitle = document.createElement("h1");
-    listTitle.classList.add("listTitle");
-    listTitle.innerText = "Groceries";
-    titleHeader.appendChild(listTitle);
+    const listName = document.createElement("h1");
+    listName.classList.add("listName");
+    listName.innerText = "Groceries";
+    titleHeader.appendChild(listName);
+
+    // LIST TITLE BUTTON //
+    
+    const startSubFolder = document.createElement("p");
+    startSubFolder.setAttribute("id", "listTitle");;
+    startSubFolder.innerText = "Add List Title";
+    startSubFolder.onclick = listTitle;
+    page.appendChild(startSubFolder);
 
     // ADD NEW LIST HOLDER //
-
-    const startSubFolder = document.createElement("p");
-    startSubFolder.classList.add("newSubfolder");
-    startSubFolder.innerText = "Create Subfolder";
-    page.appendChild(startSubFolder);
 
     const createNewList = document.createElement("div");
     createNewList.setAttribute("id", "newList");

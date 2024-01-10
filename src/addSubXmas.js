@@ -1,6 +1,6 @@
-import inputToStorage from "./inputToStorage";
+import inputToStorage from './inputToStorage';
 
-export default function addSubGeneral (parentFolder) {
+export default function addSubXmas (parentFolder) {
 
     const subList = document.getElementById(parentFolder);
     subList.classList.add("subList");
@@ -14,17 +14,6 @@ export default function addSubGeneral (parentFolder) {
     newItemName.setAttribute("placeholder", "List Item");
     newItemName.setAttribute("id", "name");
     newItemDiv.appendChild(newItemName);
-
-    const highPriority = document.createElement("p");
-    highPriority.innerText = "High Priority";
-    newItemDiv.appendChild(highPriority);
-
-    const priorityCheck = document.createElement("input");
-    priorityCheck.setAttribute("type", "checkbox");
-    priorityCheck.setAttribute("id", "priority");
-    priorityCheck.setAttribute("name", "priority");
-    priorityCheck.setAttribute("value", "high");
-    newItemDiv.appendChild(priorityCheck);
 
     const newItemNotes = document.createElement("input");
     newItemNotes.setAttribute("type", "text");
@@ -47,6 +36,5 @@ export default function addSubGeneral (parentFolder) {
     submitItem.addEventListener("click", function () {
         return inputToStorage(parentFolder);
     })
-
 
 }

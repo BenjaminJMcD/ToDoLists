@@ -1,6 +1,7 @@
 import addItemXmas from './addItemXmas';
 import getLocalStorage from './getLocalStorage';
 import clearSpecifiedList from './clearSpecifiedList';
+import listTitle from './listTitle';
 
 export default function Xmas() {
 
@@ -12,16 +13,16 @@ export default function Xmas() {
     page.setAttribute("list", "xmas");
     content.appendChild(page);
 
-    // LIST TITLE //
+    // LIST NAME HEADER //
 
     const titleHeader = document.createElement("div");
     titleHeader.classList.add("titleHeader");
     page.appendChild(titleHeader);
 
-    const listTitle = document.createElement("h1");
-    listTitle.classList.add("listTitle");
-    listTitle.innerText = "Xmas Gifts";
-    titleHeader.appendChild(listTitle);
+    const listName = document.createElement("h1");
+    listName.classList.add("listName");
+    listName.innerText = "Xmas Gifts";
+    titleHeader.appendChild(listName);
     
     // CLEAR BUTTON //
 
@@ -34,8 +35,9 @@ export default function Xmas() {
     // ADD NEW LIST HOLDER //
 
     const startSubFolder = document.createElement("p");
-    startSubFolder.classList.add("newSubfolder");
+    startSubFolder.setAttribute("id", "listTitle");
     startSubFolder.innerText = "Add Recipient";
+    startSubFolder.onclick = listTitle;
     page.appendChild(startSubFolder);
 
     const createNewList = document.createElement("div");

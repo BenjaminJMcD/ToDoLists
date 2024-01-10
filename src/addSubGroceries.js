@@ -1,11 +1,6 @@
 import inputToStorage from './inputToStorage';
 
-export default function addSubItem (parentFolder) {
-
-    // parentfolder = name of div = name of previous item without spaces
-    // create all inputs for new item
-    // add parentfolder name as .subFolder
-    // print to parentfolderdiv
+export default function addSubGroceries(parentFolder) {
 
     const subList = document.getElementById(parentFolder);
     subList.classList.add("subList");
@@ -20,23 +15,11 @@ export default function addSubItem (parentFolder) {
     newItemName.setAttribute("id", "name");
     newItemDiv.appendChild(newItemName);
 
-    const highPriority = document.createElement("p");
-    highPriority.innerText = "High Priority";
-    newItemDiv.appendChild(highPriority);
-
-    const priorityCheck = document.createElement("input");
-    priorityCheck.setAttribute("type", "checkbox");
-    priorityCheck.setAttribute("id", "priority");
-    priorityCheck.setAttribute("name", "priority");
-    priorityCheck.setAttribute("value", "high");
-    newItemDiv.appendChild(priorityCheck);
-
     const submitItem = document.createElement("button");
     submitItem.innerText = "Submit";
     newItemDiv.appendChild(submitItem);
     submitItem.addEventListener("click", function () {
         return inputToStorage(parentFolder);
     })
-
 
 }
