@@ -3,6 +3,9 @@ import getLocalStorage from './getLocalStorage';
 import clearSpecifiedList from './clearSpecifiedList';
 import listTitle from './listTitle';
 
+import subFolderTotal from './subFolderTotal';
+import pageTotal from './pageTotal';
+
 export default function Xmas() {
 
     const content = document.getElementById("content");
@@ -53,12 +56,10 @@ export default function Xmas() {
     newListItem.innerText = "General Item";
     createNewList.appendChild(newListItem);
     newListItem.onclick = addItemXmas;
-    
+
     // RENDER LIST FROM LOCAL STORAGE ON LOAD
     
     const list = "xmas"
     getLocalStorage(list);
-
-
 
 }
