@@ -53,9 +53,6 @@ export default function Xmas() {
     newListItem.innerText = "General Item";
     createNewList.appendChild(newListItem);
     newListItem.onclick = addItemXmas;
-
-
-
     
     // RENDER LIST FROM LOCAL STORAGE ON LOAD
     
