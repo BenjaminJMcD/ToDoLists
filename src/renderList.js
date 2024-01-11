@@ -6,12 +6,26 @@ import addSubGroceries from "./addSubGroceries";
 import addSubXmas from "./addSubXmas";
 import removeSubItems from "./removeSubItems";
 import subFolderTotal from "./subFolderTotal";
+import pageTotal from './pageTotal';
 
 
 export default function renderList(array) {
 
     const listDiv = document.getElementById("listDiv");
     listDiv.innerHTML = "";
+
+    // RENDER TOTAL PRICE FOR PAGE //
+
+    if (array[0]) {
+        if (array[0].list == "xmas" || array[0].list == "general") {
+            let total = pageTotal(array[0].list);
+            const grandTotal = document.createElement("p");
+            grandTotal.innerText = `Total $${total}`;
+            listDiv.appendChild(grandTotal);
+        }
+    }
+
+    // RENDER EACH ITEM WITH PROPERTIES TO PAGE //
     
     for (let i=0; i<array.length; i++) {
 

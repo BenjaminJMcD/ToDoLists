@@ -2,6 +2,7 @@ import addItemGeneral from './addItemGeneral';
 import getLocalStorage from './getLocalStorage';
 import clearSpecifiedList from './clearSpecifiedList';
 import listTitle from './listTitle';
+import pageTotal from './pageTotal';
 
 export default function General() {
 
@@ -61,7 +62,6 @@ export default function General() {
     
     const list = "general"
     getLocalStorage(list);
-
 
 
 }
