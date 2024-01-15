@@ -7,6 +7,7 @@ import addSubXmas from "./addSubXmas";
 import removeSubItems from "./removeSubItems";
 import subFolderTotal from "./subFolderTotal";
 import pageTotal from './pageTotal';
+import toggleDone from "./toggleDone";
 
 
 export default function renderList(array) {
@@ -74,6 +75,18 @@ export default function renderList(array) {
             renderWeight.classList.add("renderWeight");
             renderWeight.innerText = `${array[i].weight} lbs`;
             renderItem.appendChild(renderWeight);
+        }
+
+        const markAsDone = document.createElement("input");
+        markAsDone.setAttribute("id", "doneCheck");
+        markAsDone.setAttribute("type", "checkbox");
+        markAsDone.setAttribute("name", "done");
+        markAsDone.onchange = toggleDone;
+        renderItem.appendChild(markAsDone);
+
+        if (array[i].done == true) {
+             markAsDone.checked = true;
+             renderItem.classList.add("done");
         }
 
         if (array[i].list === "daily"  && array[i].subFolder === null|| array[i].list == "big" && array[i].subFolder === null) {

@@ -154,7 +154,9 @@ body {
     padding-left: 100px;
 }
 
-
+.done {
+    text-decoration: line-through;
+}
 
 
 /* FOOTER */
