@@ -1,7 +1,7 @@
 import addItemGeneral from './addItemGeneral';
 import getLocalStorage from './getLocalStorage';
 import clearSpecifiedList from './clearSpecifiedList';
-import listTitle from './listTitle';
+import listHeader from './listHeader';
 import pageTotal from './pageTotal';
 
 export default function General() {
@@ -20,17 +20,17 @@ export default function General() {
     titleHeader.classList.add("titleHeader");
     page.appendChild(titleHeader);
 
-    const listName = document.createElement("h1");
-    listName.classList.add("listName");
-    listName.innerText = "General";
-    titleHeader.appendChild(listName);
+    const listTitle = document.createElement("h1");
+    listTitle.classList.add("listTitle");
+    listTitle.innerText = "General";
+    titleHeader.appendChild(listTitle);
 
-    // LIST TITLE BUTTON //
+    // LIST HEADER BUTTON //
 
     const startSubFolder = document.createElement("p");
-    startSubFolder.setAttribute("id", "listTitle");
-    startSubFolder.innerText = "Add List Title";
-    startSubFolder.onclick = listTitle;
+    startSubFolder.setAttribute("id", "listHeader");
+    startSubFolder.innerText = "Add List Header";
+    startSubFolder.onclick = listHeader;
     page.appendChild(startSubFolder);
 
     // ADD NEW LIST HOLDER //
@@ -42,13 +42,8 @@ export default function General() {
     const listDiv = document.createElement("div");
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
-    
-    const newListItem = document.createElement("p");
-    newListItem.setAttribute("id", "newListItem");
-    newListItem.innerText = "Add Item";
-    createNewList.appendChild(newListItem);
-    newListItem.onclick = addItemGeneral;
 
+    addItemGeneral();
 
     // CLEAR BUTTON //
 

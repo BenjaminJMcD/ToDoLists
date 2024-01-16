@@ -50,10 +50,6 @@ export default function Big() {
 
     // NEW ITEM FORM //
 
-    const newListItem = document.createElement("p");
-    newListItem.setAttribute("id", "newListItem");
-    newListItem.innerText = "Add Item";
-    createNewList.appendChild(newListItem);
-    newListItem.onclick = addItem;
+    addItem();
 
 }

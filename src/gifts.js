@@ -1,6 +1,7 @@
 import addItemGifts from './addItemGifts';
 import getLocalStorage from './getLocalStorage';
 import clearSpecifiedList from './clearSpecifiedList';
+import listHeader from './listHeader';
 
 export default function Gifts() {
 
@@ -26,8 +27,9 @@ export default function Gifts() {
     // ADD NEW LIST HOLDER //
 
     const startSubFolder = document.createElement("p");
-    startSubFolder.classList.add("newSubfolder");
+    startSubFolder.setAttribute("id", "listHeader");
     startSubFolder.innerText = "Create Subfolder";
+    startSubFolder.onclick = listHeader;
     page.appendChild(startSubFolder);
 
     const createNewList = document.createElement("div");
@@ -37,13 +39,6 @@ export default function Gifts() {
     const listDiv = document.createElement("div");
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
-    
-    const newListItem = document.createElement("p");
-    newListItem.setAttribute("id", "newListItem");
-    newListItem.innerText = "Add Item";
-    createNewList.appendChild(newListItem);
-    newListItem.onclick = addItemGifts;
-
 
     // CLEAR BUTTON //
 
@@ -58,6 +53,8 @@ export default function Gifts() {
     const list = "gifts"
     getLocalStorage(list);
 
+    // NEW ITEM FORM //
 
+    addItemGifts();
 
 }

@@ -31,14 +31,16 @@ body {
 /* SIDEBAR LIST SELECTION */
 
 .sideBar {
+    display: grid;
     position: fixed;
     top: 150px;
     bottom: 40px;
     z-index: 2;
+    
 }
 
 .sidebarBtn {
-    padding-left: 30px;
+    padding-left: 26px;
     padding-right: 30px;
     border: 1px solid black;
 }
@@ -93,18 +95,21 @@ body {
 #page {
     position: absolute;
     overflow:auto;
+    width: 100%;
+}
+
+.clearBtn {
+    position: absolute;
+    right: 70px;
+    top: 30px;
 }
 
 .titleHeader {
-
+    display: flex;
 }
 
-.listName {
-    padding-left: 20px;
-}
-
-#listTitle {
-    padding-left: 40px;
+.listTitle {
+    margin-left: 90px;
 }
 
 #newList {
@@ -113,7 +118,7 @@ body {
 
 #listDiv {
     position: relative;
-    padding-left: 80px;
+    margin-left: 80px;
     bottom: 40px;
 
 }

@@ -24,19 +24,19 @@ export default function Daily() {
     listTitle.innerText = "To Do - Today";
     titleHeader.appendChild(listTitle);
 
-    // ADD NEW LIST HOLDER //
-
-    const createNewList = document.createElement("div");
-    createNewList.setAttribute("id", "newList");
-    page.appendChild(createNewList);
-
     // CLEAR BUTTON //
 
     const clearBtn = document.createElement("button");
     clearBtn.innerText = "Clear All";
     clearBtn.classList.add("clearBtn");
-    page.appendChild(clearBtn);
+    titleHeader.appendChild(clearBtn);
     clearBtn.onclick = clearSpecifiedList;
+
+    // ADD NEW LIST HOLDER //
+
+    const createNewList = document.createElement("div");
+    createNewList.setAttribute("id", "newList");
+    page.appendChild(createNewList);
 
     // DIV FOR NEW LIST
 
@@ -52,10 +52,5 @@ export default function Daily() {
 
     // NEW ITEM FORM //
     
-    const newListItem = document.createElement("p");
-    newListItem.setAttribute("id", "newListItem");
-    newListItem.innerText = "Add Item";
-    createNewList.appendChild(newListItem);
-    newListItem.onclick = addItem;
-    
+    addItem();
 }

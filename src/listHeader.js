@@ -1,13 +1,10 @@
 import inputToStorage from './inputToStorage';
 
-export default function listTitle() {
+export default function listHeader() {
 
     const page = document.getElementById("page");
 
-    const addBtn = document.getElementById("newListItem");
-    addBtn.classList.add("hidden");
-
-    const titleBtn = document.getElementById("listTitle");
+    const titleBtn = document.getElementById("listHeader");
     titleBtn.classList.add("hidden");
 
     const newItemDiv = document.createElement("div");

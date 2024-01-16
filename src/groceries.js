@@ -1,7 +1,7 @@
 import addItemGroceries from './addItemGroceries';
 import getLocalStorage from './getLocalStorage';
 import clearSpecifiedList from './clearSpecifiedList';
-import listTitle from './listTitle';
+import listHeader from './listHeader';
 
 export default function Groceries() {
 
@@ -19,17 +19,17 @@ export default function Groceries() {
     titleHeader.classList.add("titleHeader");
     page.appendChild(titleHeader);
 
-    const listName = document.createElement("h1");
-    listName.classList.add("listName");
-    listName.innerText = "Groceries";
-    titleHeader.appendChild(listName);
+    const listTitle = document.createElement("h1");
+    listTitle.classList.add("listTitle");
+    listTitle.innerText = "Groceries";
+    titleHeader.appendChild(listTitle);
 
-    // LIST TITLE BUTTON //
+    // LIST HEADER BUTTON //
     
     const startSubFolder = document.createElement("p");
-    startSubFolder.setAttribute("id", "listTitle");;
-    startSubFolder.innerText = "Add List Title";
-    startSubFolder.onclick = listTitle;
+    startSubFolder.setAttribute("id", "listHeader");;
+    startSubFolder.innerText = "Add List Header";
+    startSubFolder.onclick = listHeader;
     page.appendChild(startSubFolder);
 
     // ADD NEW LIST HOLDER //
@@ -41,13 +41,6 @@ export default function Groceries() {
     const listDiv = document.createElement("div");
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
-    
-    const newListItem = document.createElement("p");
-    newListItem.setAttribute("id", "newListItem");
-    newListItem.innerText = "Add Item";
-    createNewList.appendChild(newListItem);
-    newListItem.onclick = addItemGroceries;
-
 
     // CLEAR BUTTON //
 
@@ -61,6 +54,10 @@ export default function Groceries() {
         
     const list = "groceries"
     getLocalStorage(list);
+
+    // NEW ITEM FORM //
+    
+    addItemGroceries();
 
 
 

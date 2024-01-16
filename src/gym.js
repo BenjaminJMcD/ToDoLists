@@ -37,13 +37,6 @@ export default function Gym() {
     const listDiv = document.createElement("div");
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
-    
-    const newListItem = document.createElement("p");
-    newListItem.setAttribute("id", "newListItem");
-    newListItem.innerText = "Add Item";
-    createNewList.appendChild(newListItem);
-    newListItem.onclick = addItemGym;
-
 
     // CLEAR BUTTON //
 
@@ -58,6 +51,8 @@ export default function Gym() {
     const list = "gym"
     getLocalStorage(list);
 
+    // NEW ITEM FORM //
 
+    addItemGym();
 
 }
