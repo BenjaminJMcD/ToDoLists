@@ -5,7 +5,7 @@ export default function addItemGroceries () {
     const page = document.getElementById("page");
 
     const newItemDiv = document.createElement("div");
-    newItemDiv.classList.add("newItemDiv");
+    newItemDiv.setAttribute("id", "newItemDiv");
     page.appendChild(newItemDiv);
 
     const newItemName = document.createElement("input");

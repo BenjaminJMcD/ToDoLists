@@ -25,11 +25,6 @@ export default function Gym() {
 
     // ADD NEW LIST HOLDER //
 
-    const startSubFolder = document.createElement("p");
-    startSubFolder.classList.add("newSubfolder");
-    startSubFolder.innerText = "Create Subfolder";
-    page.appendChild(startSubFolder);
-
     const createNewList = document.createElement("div");
     createNewList.setAttribute("id", "newList");
     page.appendChild(createNewList);

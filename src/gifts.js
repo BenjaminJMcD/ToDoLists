@@ -26,12 +26,6 @@ export default function Gifts() {
 
     // ADD NEW LIST HOLDER //
 
-    const startSubFolder = document.createElement("p");
-    startSubFolder.setAttribute("id", "listHeader");
-    startSubFolder.innerText = "Create Subfolder";
-    startSubFolder.onclick = listHeader;
-    page.appendChild(startSubFolder);
-
     const createNewList = document.createElement("div");
     createNewList.setAttribute("id", "newList");
     page.appendChild(createNewList);

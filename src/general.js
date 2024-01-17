@@ -43,8 +43,6 @@ export default function General() {
     listDiv.setAttribute("id", "listDiv");
     page.appendChild(listDiv);
 
-    addItemGeneral();
-
     // CLEAR BUTTON //
 
     const clearBtn = document.createElement("button");
@@ -57,6 +55,10 @@ export default function General() {
     
     const list = "general"
     getLocalStorage(list);
+
+    // NEW ITEM FORM //
+
+    addItemGeneral();
 
 
 }

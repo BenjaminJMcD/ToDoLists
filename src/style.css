@@ -135,8 +135,9 @@ body {
     background-color: red;
 }
 
-.newItemDiv {
+#newItemDiv {
     display: flex;
+    margin-left: 80px;
 }
 
 .renderItem {

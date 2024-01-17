@@ -10,16 +10,31 @@ export default function inputToStorage(subFolder) {
     const list = page.getAttribute("list");
     
     const getName = document.getElementById("name");
-    const name = getName.value;
+    const getHeader = document.getElementById("headerName");
+    const getSubItem = document.getElementById("subItem");
+
+    if (getHeader) {
+        const header = getHeader.value;
+        newItem.name = header;
+        const newHeaderDiv = document.getElementById("newHeaderDiv");
+        newHeaderDiv.innerHTML = "";
+    }
+    else if (getSubItem) {
+        const subItem = getSubItem.value;
+        newItem.name = subItem
+    }
+    else {
+        const name = getName.value;
+        newItem.name = name;
+        getName.value = ""
+    }
 
     newItem.key = localStorage.length;
     newItem.list = list;
-    newItem.name = name;
-    getName.value = "";
-
     newItem.subFolder = subFolder;
 
     const getPriority = document.getElementById("priority");
+
         if (getPriority) {
             const checked = getPriority.checked;
             newItem.priority = checked;
@@ -81,8 +96,9 @@ export default function inputToStorage(subFolder) {
 
     newItem.done = false;
 
-
     SetLocalStorage(localStorage.length, newItem);
     getLocalStorage(list);
+
+    
 
 }
