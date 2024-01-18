@@ -20,9 +20,11 @@ export default function renderList(array) {
     if (array[0]) {
         if (array[0].list == "xmas" || array[0].list == "general") {
             let total = pageTotal(array[0].list);
+            if (total != 0 && total != null) {
             const grandTotal = document.createElement("p");
             grandTotal.innerText = `Total $${total}`;
             listDiv.appendChild(grandTotal);
+        }
         }
     }
 
@@ -98,17 +100,21 @@ export default function renderList(array) {
                 return addSubItem(array[i].name.replace(/ /g, ""))})
         }
         else if (array[i].list == "general" && array[i].subFolder === null) {
-            const subfolderBtn = document.createElement("p");
-            subfolderBtn.innerText = "+SubList";
-            subfolderBtn.classList.add("subfolderBtn");
-            renderItem.appendChild(subfolderBtn);
-            subfolderBtn.addEventListener("click", function () {
-                return addSubGeneral(array[i].name.replace(/ /g, ""))
-            })
             const subTotal = document.createElement("p");
             const totalValue = subFolderTotal(array[i].name.replace(/ /g, ""));
-            subTotal.innerText = `Total $${totalValue}`
-            renderItem.appendChild(subTotal); 
+            if (totalValue != 0) {
+                subTotal.innerText = `Total $${totalValue}`
+                renderItem.appendChild(subTotal); 
+            }
+            if (array[i].price == null) {
+                const subfolderBtn = document.createElement("p");
+                subfolderBtn.innerText = "+SubList";
+                subfolderBtn.classList.add("subfolderBtn");
+                renderItem.appendChild(subfolderBtn);
+                subfolderBtn.addEventListener("click", function () {
+                    return addSubGeneral(array[i].name.replace(/ /g, ""))
+                })
+            }
         }
         else if (array[i].list == "groceries" && array[i].subFolder === null) {
             const subfolderBtn = document.createElement("p");
@@ -128,9 +134,10 @@ export default function renderList(array) {
             }) 
             const subTotal = document.createElement("p");
             const totalValue = subFolderTotal(array[i].name.replace(/ /g, ""));
-            subTotal.innerText = `Total $${totalValue}`
-            renderItem.appendChild(subTotal);
-            
+            if (totalValue != 0) {
+                subTotal.innerText = `Total $${totalValue}`
+                renderItem.appendChild(subTotal);
+            }
         }
         
         const editBtn = document.createElement("button");

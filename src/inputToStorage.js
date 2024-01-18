@@ -55,7 +55,7 @@ export default function inputToStorage(subFolder) {
         }
 
     const getPrice = document.getElementById("price");
-        if (getPrice) {
+        if (getPrice && getPrice.value != "") {
             const price = getPrice.value;
             newItem.price = price;
             getPrice.value = "";
